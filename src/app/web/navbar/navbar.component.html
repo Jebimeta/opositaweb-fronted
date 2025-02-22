@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Logo o nombre de la aplicación -->
+        <a class="navbar-brand" [routerLink]="['/home']">Mi Aplicación</a>
+
+        <!-- Botón de alternancia para dispositivos móviles -->
+        <button class="navbar-toggler" type="button" (click)="isProfileMenuOpen = !isProfileMenuOpen"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenedor de los elementos del menú -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Iteración sobre los elementos del menú -->
+                <li class="nav-item" *ngFor="let item of navbarItems">
+                    <!-- Si el elemento tiene subitems (menú desplegable) -->
+                    <ng-container *ngIf="item.subItems; else singleItem">
+                        <div class="nav-item dropdown">
+                            <!-- Enlace principal con dropdown -->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="pi" [ngClass]="item.icon"></i> {{ item.label }}
+                            </a>
+                            <!-- Menú desplegable -->
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Iteración sobre los subitems -->
+                                <li *ngFor="let subItem of item.subItems">
+                                    <a class="dropdown-item" *ngIf="subItem.url" [routerLink]="subItem.url">{{
+                                        subItem.label }}</a>
+                                    <a class="dropdown-item" *ngIf="subItem.action" (click)="subItem.action()">{{
+                                        subItem.label }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ng-container>
+
+                    <!-- Si el elemento no tiene subitems (enlace simple) -->
+                    <ng-template #singleItem>
+                        <a class="nav-link" [routerLink]="item.url" routerLinkActive="active" aria-current="page">
+                            <i class="pi" [ngClass]="item.icon"></i> {{ item.label }}
+                        </a>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

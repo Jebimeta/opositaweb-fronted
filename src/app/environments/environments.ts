@@ -6,4 +6,5 @@ export const environments = {
     basePaymentPlansUrl: 'http://localhost:8080/api/v1/payment-plans',
     baseTestUrl: 'http://localhost:8080/api/v1/test',
     basePdfsUrl: 'http://localhost:8080/api/v1/pdfs',
+    baseAuthUrl: 'http://localhost:8080/api/v1/auth',
 }

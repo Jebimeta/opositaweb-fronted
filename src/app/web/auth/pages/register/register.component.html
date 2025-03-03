@@ -1,1 +1,73 @@
-<p>register works!</p>
+<app-navbar></app-navbar>
+<div class="page">
+  <div class="container-fluid d-flex justify-center">
+    <div class="form-container">
+      <form action="" (ngSubmit)="register()" class="register-form">
+        <h1>Registro</h1>
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="user.name"
+          name="name"
+          required
+        />
+        <label for="lastname">Apellidos</label>
+        <input
+          type="text"
+          id="lastname"
+          [(ngModel)]="user.lastNames"
+          name="lastname"
+          required
+        />
+        <label for="dni">DNI</label>
+        <input
+          type="text"
+          id="dni"
+          [(ngModel)]="user.dni"
+          name="dni"
+          required
+        />
+        <label for="telephone">Telefono</label>
+        <input
+          type="text"
+          id="telephone"
+          [(ngModel)]="user.telephone"
+          name="telephone"
+          required
+        />
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+        />
+        <label for="password">Nueva contraseña</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+        />
+        <label for="repeat-password">Repite la contraseña</label>
+        <input
+          type="password"
+          id="repeat-password"
+          name="repeat-password"
+          required
+        />
+        <button type="submit">Registrarse</button>
+
+        <div class="goToLogin-container">
+            <p class="goTologin mt-3" (click)="goTologin()">
+              ¿Quieres iniciar sesión?
+            </p>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

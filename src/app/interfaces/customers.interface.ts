@@ -1,5 +1,4 @@
 export interface Customer {
-    id: number;
     name: string;
     lastNames: string;
     dni: string;
@@ -7,5 +6,4 @@ export interface Customer {
     password: string;
     telephone: string;
     status: boolean;
-    subscriptionStatus: boolean;
 }

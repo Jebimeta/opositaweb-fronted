@@ -9,9 +9,11 @@ import AuthService from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
+  
   private router = inject(Router); //Nos sirve para navegar entre las rutas de la aplicación
 
   private authService = inject(AuthService); //Nos sirve para gestionar la autenticación de los usuarios
@@ -43,12 +45,7 @@ export class NavbarComponent {
         label: 'Contacto', // Botón para ver la información de contacto
         url: '/contact/about-us',
         icon: PrimeIcons.ENVELOPE,
-      },
-      {
-        label: 'Login', // Botón para iniciar sesión
-        url: '/auth/login',
-        icon: PrimeIcons.USER,
-      },
+      }
     ];
 
     // Verificamos si el usuario está logueado
@@ -56,7 +53,7 @@ export class NavbarComponent {
       // Si el usuario es administrador, agregamos un boton especial para el
       if (this.authService.isAdmin()) {
         this.navbarItems.push({
-          label: 'Admintración',
+          label: 'Administración',
           url: '/admin',
           icon: PrimeIcons.COG,
         });
@@ -85,7 +82,6 @@ export class NavbarComponent {
           },
         ],
       });
-
       // Agregamos un boton para la compra
       this.navbarItems.push({
         label: 'Compra', // Botón para comprar

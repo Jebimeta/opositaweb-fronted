@@ -1,11 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { environments } from '../environments/environments';
 import { Customer } from '../interfaces/customers.interface';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
 import { RegisterResponse } from '../interfaces/register-response.interface';
 import { Login } from '../interfaces/login.interface';
@@ -15,6 +11,7 @@ import { LoginResponse } from '../interfaces/login-response.interface';
   providedIn: 'root',
 })
 export default class AuthService {
+  
   private baseUrl: string = environments.baseAuthUrl; //Url para la solicitud de autenticación
 
   private user?: Customer; //Almacena la información del usuario autenticado

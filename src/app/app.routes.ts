@@ -10,10 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./web/admin/admin.component'),
     children: [
       {
-        path: 'dashboard users',
+        path: 'dashboard-users',
         title: 'Dashboard de administrador Customer',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/customer/customer.component'),
         children: [
           {
             path: 'create-customer',
@@ -58,10 +58,10 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'dashboard questions',
+        path: 'dashboard-questions',
         title: 'Dashboard de administrador Questions',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/question/question.component'),
         children: [
           {
             path: 'create-question',
@@ -106,10 +106,10 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'dashboard payments',
+        path: 'dashboard-payments',
         title: 'Dashboard de administrador Payments',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/payment/payment.component'),
         children: [
           {
             path: 'create-payment',
@@ -154,10 +154,10 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'dashboard paymentPlans',
+        path: 'dashboard-paymentPlans',
         title: 'Dashboard de administrador PaymentPlans',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/paymentPlan/payment-plan.component'),
         children: [
           {
             path: 'create-paymentPlan',
@@ -202,10 +202,10 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'dashboard tests',
+        path: 'dashboard-tests',
         title: 'Dashboard de administrador Tests',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/test/test.component'),
         children: [
           {
             path: 'create-test',
@@ -251,10 +251,10 @@ export const routes: Routes = [
         ]
       },
       {
-        path: 'dashboard pdfs',
+        path: 'dashboard-pdfs',
         title: 'Dashboard de administrador PDFs',
         loadComponent: () =>
-          import('./web/admin/pages/dashboard/dashboard.component'),
+          import('./web/admin/pages/pdf/pdf.component'),
         children: [
           {
             path: 'create-pdf',
@@ -299,5 +299,41 @@ export const routes: Routes = [
         ]
       }
     ],
+  },
+  {
+    path: 'auth',
+    loadComponent: () => import('./web/auth/auth/auth.component'),
+    children:[
+      {
+        path: 'login',
+        title: 'Iniciar sesión',
+        loadComponent: () => import('./web/auth/pages/login/login.component')
+      },
+      {
+        path: 'register',
+        title: 'Registro',
+        loadComponent: () => import('./web/auth/pages/register/register.component')
+      },
+      {
+        path: 'user-registered',
+        title: 'Usuario registrado',
+        loadComponent: () => import('./web/auth/pages/user-registered/user-registered.component')
+      },
+      {
+        path: 'verify',
+        title: 'Usuario verificado',
+        loadComponent: () => import('./web/auth/pages/verify/verify.component')
+      },
+      {
+        path: 'verify-error',
+        title: 'Error al verificar usuario',
+        loadComponent: () => import('./web/auth/pages/verify-error/verify-error.component')
+      }
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
 ];

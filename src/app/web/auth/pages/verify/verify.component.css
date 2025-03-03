@@ -1,0 +1,14 @@
+.centered-div {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos hijos se apilen verticalmente */
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Altura de la pantalla completa */
+    text-align: center;
+}
+
+.centered-div p {
+    font-size: 1.5em; /* Aumenta el tamaño de la letra */
+    font-weight: bold; /* Hace el texto en negrita */
+    margin-bottom: 1em; /* Añade un margen inferior para el espacio entre párrafos */
+}

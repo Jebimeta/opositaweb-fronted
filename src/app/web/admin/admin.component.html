@@ -1,1 +1,14 @@
+<app-navbar></app-navbar>
+
+<div class="admin-container">
+    <div *ngFor="let item of adminItems" class="admin-item">
+        <button (click)="navigateTo(item.url)">
+            <i [class]="item.icon"></i>
+            {{ item.label }}
+        </button>
+    </div>
+</div>
+
+
+
 <router-outlet></router-outlet>

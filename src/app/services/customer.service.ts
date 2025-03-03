@@ -3,6 +3,7 @@ import { environments } from '../environments/environments';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of } from 'rxjs';
 import { Customer } from '../interfaces/customers.interface';
+import { CustomerResponse } from '../interfaces/customersResponse.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,13 +13,13 @@ export class CustomerService {
 
   private http = inject(HttpClient);
 
-  getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.baseUrl + '/obtain-customers');
+  getCustomers(): Observable<CustomerResponse[]> {
+    return this.http.get<CustomerResponse[]>(this.baseUrl + '/obtain-customers');
   }
 
-  getCustomerById(id: number): Observable<Customer | undefined> {
+  getCustomerById(id: number): Observable<CustomerResponse | undefined> {
     return this.http
-      .get<Customer>(this.baseUrl + '/find-customer/' + id)
+      .get<CustomerResponse>(this.baseUrl + '/find-customer/' + id)
       .pipe(catchError((error) => of(undefined)));
   }
 

@@ -1,0 +1,101 @@
+/* Bloque principal */
+.navbar {
+    background-color: rgb(109, 136, 117); /* Verde Guardia Civil */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+/* Contenedor interno */
+.navbar__container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Botón toggler (oculto en escritorio) */
+.navbar__toggler {
+    padding: 0.5rem;
+    border: 10px solid #ddd;
+    border-radius: 0.375rem;
+    display: none; /* Oculto en escritorio */
+}
+
+/* Contenedor colapsable */
+.navbar__collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar los elementos */
+    width: 100%;
+}
+
+/* Lista de elementos */
+.navbar__list {
+    display: flex;
+    gap: 1.5rem; /* Espacio entre elementos */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Elementos de la lista */
+.navbar__item {
+    position: relative;
+}
+
+/* Enlaces */
+.navbar__link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: #4a5568; /* Gris oscuro */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+    color: #1a202c; /* Gris más oscuro */
+}
+
+/* Iconos */
+.navbar__icon {
+    margin-right: 0.5rem;
+}
+
+/* Dropdown */
+.navbar__dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem;
+    padding: 0.5rem 0;
+    min-width: 150px;
+}
+
+.navbar__dropdown:hover .navbar__dropdown-menu {
+    display: block;
+}
+
+.navbar__dropdown-link {
+    padding: 0.5rem 1rem;
+    color: #4a5568;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar__dropdown-link:hover {
+    background-color: #f7fafc; /* Gris claro */
+}
+
+/* Modificadores */
+.navbar__link--active {
+    font-weight: bold;
+}
+
+.navbar__link--action {
+    cursor: pointer;
+}

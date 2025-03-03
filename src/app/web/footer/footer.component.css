@@ -1,0 +1,89 @@
+/*FOOTER DE LA PÁGINA COMPLETO*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer {
+    background-color: rgb(109, 136, 117); 
+    padding: 20px 0; 
+    width: 100%;
+    margin-top: auto; /* Asegura que el footer se quede abajo */
+}
+
+.footer .container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap; 
+    
+    padding: 20px;
+}
+
+.footer .social-icons a {
+    margin: 0; 
+    margin-left: 5px;
+    color: #45a9bb; 
+    text-decoration: none; 
+    font-size: 24px; 
+}
+
+.footer .social-icons a:hover {
+    color: #83baf5;
+}
+
+.footer .copyright {
+    text-align: center; 
+    margin-top: 10px;
+    font-size: 14px; 
+    color: #6c757d; 
+}
+
+h5 {
+    color: #006cdf;
+    font-size: 1.7rem;
+    margin-top: -10px;
+}
+
+footer .datos-contacto p {
+    font-size: 1rem;
+    font-weight: bold; 
+}
+
+/* Estilo para los valores como el correo y teléfono */
+footer .datos-contacto .value {
+    font-size: 1rem; 
+    color: #363c42; 
+    transition: font-size 0.3s ease; 
+}
+
+/* Estilo cuando pasas el mouse sobre el valor */
+footer .datos-contacto .value:hover {
+    font-size: 1.2rem; 
+    color: #007bff; 
+}
+
+/* Sombra suave en la caja */
+.footer .container:hover {
+    box-shadow: 0 81px 60px rgba(0, 0, 0, 0.15); 
+}
+
+/* Mejorar la interactividad de los iconos */
+.footer .social-icons a:hover {
+    color: #ff4081; 
+    transform: scale(1.2); 
+    transition: all 0.3s ease; 
+}

@@ -1,0 +1,78 @@
+/* Contenedor principal */
+.admin-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    background-color: #f5f5f5; /* Fondo gris claro */
+}
+
+/* Cada elemento de administración */
+.admin-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    width: 200px; /* Ancho fijo para cada botón */
+    text-align: center; /* Centra el texto */
+}
+
+/* Efecto hover para los elementos */
+.admin-item:hover {
+    transform: translateY(-5px); /* Levanta el elemento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilo del botón */
+.admin-item button {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333; /* Color de texto oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+}
+
+/* Estilo del icono */
+.admin-item button i {
+    font-size: 24px; /* Tamaño del icono */
+    color: #007bff; /* Color azul para los iconos */
+}
+
+/* Estilo del texto */
+.admin-item button span {
+    font-weight: bold;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .admin-item {
+        width: 150px; /* Reduce el ancho en pantallas pequeñas */
+    }
+
+    .admin-item button {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .admin-item button i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-item {
+        width: 100%; /* Ocupa todo el ancho en pantallas muy pequeñas */
+    }
+}

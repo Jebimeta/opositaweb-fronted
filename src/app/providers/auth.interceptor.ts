@@ -12,6 +12,7 @@ import { throwError } from 'rxjs';
 
 // Definimos el interceptor de autenticación
 export const authInterceptor: HttpInterceptorFn = (request, next) => {
+  
   const authService = inject(AuthService); // Inyectamos el AuthService para acceder a sus metodos
 
   const refreshToken = authService.getRefreshToken(); // Obtenemos el token de autenticación de la memoria local

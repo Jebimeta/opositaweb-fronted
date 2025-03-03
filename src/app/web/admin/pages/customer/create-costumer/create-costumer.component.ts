@@ -66,12 +66,12 @@ export default class CreateCustomerComponent implements OnInit {
   // Método para validar las contraseñas
   private validatePasswords(): boolean {
     const password = this.customerFrom.get('password')?.value ?? '';
-    const confirmPassword = this.customerFrom.get('confirmPassword')?.value ?? '';
+    const confirmPassword = this.customerFrom.get('repeat-password')?.value ?? '';
 
-    if (password !== confirmPassword) {
-      alert('Las contraseñas no coinciden.');
-      return false;
-    }
+    // if (password !== confirmPassword) {
+    //   alert('Las contraseñas no coinciden.');
+    //   return false;
+    // }
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
     if (!passwordRegex.test(password)) {
